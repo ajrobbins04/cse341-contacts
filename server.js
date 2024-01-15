@@ -5,7 +5,7 @@ const controller = require('./controllers/index.js');
  
 // use express's get method to create a home page
 app.get('/', controller.finnRoute);
-app.get('/riley', controller.rileyRoute);
+app.get('/ri', controller.rileyRoute);
  
 const port = 3000;
 
