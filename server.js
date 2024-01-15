@@ -1,7 +1,7 @@
 // include the express module
 const express = require('express');
 const app = express();
-const controller = require('./controllers/index');
+const controller = require('./controllers/index.js');
  
 // use express's get method to create a home page
 app.get('/', controller.finnRoute);
