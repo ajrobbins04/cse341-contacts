@@ -1,11 +1,11 @@
 // include the express module
 const express = require('express');
 const app = express();
+const controller = require('./controllers/index');
  
 // use express's get method to create a home page
-app.get('/', (req, res) => {
-  res.send("Finn Dwyer");
-});
+app.get('/', controller.finnRoute);
+app.get('/riley', controller.rileyRoute);
  
 const port = 3000;
 
