@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Courtney",
+        "lastName": "Roberts",
+        "email": "courtRoberts12@gmail.com",
+        "favoriteColor": "Purple",
+        "birthday": "1990-06-10"
+    },
+    {
+        "firstName": "Jerrick",
+        "lastName": "Robbins",
+        "email": "jlRobbins@gmail.com",
+        "favoriteColor": "Blue",
+        "birthday": "1989-05-05"
+    },
+    {
+        "firstName": "Lindsey",
+        "lastName": "Osborne",
+        "email": "l.osborne611@gmail.com",
+        "favoriteColor": "Pink",
+        "birthday": "1993-05-30"
+    },
+    {
+        "firstName": "Elizabeth",
+        "lastName": "Ririe",
+        "email": "ejRirie@gmail.com",
+        "favoriteColor": "Green",
+        "birthday": "1985-03-22"
+    }
+      
+]
+  
