@@ -3,16 +3,9 @@ const dotenv = require('dotenv').config();
 
 const { MongoClient } = require('mongodb');
 
-// MongoDB connection options 
-const options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
-  
-
 const connectDB = async () => {
     try {
-        const client = new MongoClient(process.env.MONGODB_URI, options);
+        const client = new MongoClient(process.env.MONGODB_URI);
         await client.connect();
         console.log('MongoDB connected');
 
