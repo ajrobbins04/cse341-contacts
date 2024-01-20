@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const controller = require('./controllers/index.js');
  
-// use express's get method to create a home page
+// use express's get method to define a route when 
+// handling a HTTP request
 app.get('/', controller.finnRoute);
 app.get('/ri', controller.rileyRoute);
  
