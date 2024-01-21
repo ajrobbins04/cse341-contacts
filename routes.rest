@@ -7,9 +7,9 @@ GET http://localhost:8080/contacts/65ac4a5d041801aac0012b49
 GET http://localhost:8080/contacts/65ac4a5d041801aac0012b4a
 
 // PRODUCTION Deploy
-GET https://cse341-01-test.onrender/contacts
-GET https://cse341-01-test.onrender/contacts/
-GET https://cse341-01-test.onrender/contacts/65ac4a5d041801aac0012b4b
-GET https://cse341-01-test.onrender/contacts/65ac4a5d041801aac0012b4c
-GET https://cse341-01-test.onrender/contacts/65ac4a5d041801aac0012b49
-GET https://cse341-01-test.onrender/contacts/65ac4a5d041801aac0012b4a
+GET https://cse341-01-test.onrender.com/contacts
+GET https://cse341-01-test.onrender.com/contacts/
+GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b4b
+GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b4c
+GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b49
+GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b4a
