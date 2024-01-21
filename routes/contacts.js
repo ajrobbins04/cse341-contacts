@@ -7,6 +7,7 @@ const contactsController = require('../controllers/contacts');
 const router = express.Router();
 
 // defines route for handling HTTP GET requests to the root path
-router.get('/', contactsController.getDataFromDB);
+router.get('/', contactsController.getAllDataFromDB);
+router.get('/:id', contactsController.getDataFromDB);
 
 module.exports = router;
