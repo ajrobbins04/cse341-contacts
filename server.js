@@ -23,8 +23,7 @@ app.use((req, res, next) => {
 });
 
 // specify our url path for '/contacts' in the routes module
-app.use('/contacts', routes);
-
+app.use('/', routes);
 
 // use express's listen method to create a port so the application
 // can be tested on a browser
