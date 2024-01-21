@@ -1,4 +1,5 @@
 const { connectDB } = require('../db/connect');
+const { ObjectId } = require('mongodb');
 
 const getAllDataFromDB = async (req, res, next) => {
   const client = await connectDB();
@@ -9,6 +10,7 @@ const getAllDataFromDB = async (req, res, next) => {
     const result = await collection.find().toArray();
     console.log('Data from MongoDB:', result);
     res.send(result);
+
   } catch(error) {
     console.error('Error retrieving data from MongoDB:', error.message);
   } finally {
@@ -17,16 +19,18 @@ const getAllDataFromDB = async (req, res, next) => {
   }
 };
 
-const getDataFromDB = async () => {
+const getDataFromDB = async (req, res, next) => {
     const client = await connectDB();
     const userId = new ObjectId(req.params.id);
   
     try {
       const db = client.db('02-personal');
       const collection = db.collection('contacts');
-      const result = await collection.find().toArray();
+      const result = await collection.find({ _id: userId }).toArray();
+
       console.log('Data from MongoDB:', result);
-  
+      res.send(result);
+
     } catch (error){
       console.error('Error retrieving data from MongoDB:', error.message);
     } finally {
