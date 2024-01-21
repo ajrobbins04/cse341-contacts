@@ -3,14 +3,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser'); 
 const controller = require('./controllers/contacts');
-const routes = require('./routes/contacts');
+const contactRoutes = require('./routes/contacts');
 
 const { connectDB } = require('./db/connect');
 connectDB();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
  
-app.use('/contacts', routes);
+app.use('/contacts', contactRoutes);
 
 
 // use express's listen method to create a port so the application
