@@ -9,15 +9,14 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "prettier/prettier": [
-    "error",
-    {
-      "singleQuote": true,
-      "parser": "flow"
-    }
-  ],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "parser": "flow"
+      }
+    ],
     "no-unused-vars": "warn",
     "semi": ["error", "always"],
     "no-console": "off",
