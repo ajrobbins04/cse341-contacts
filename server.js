@@ -1,16 +1,16 @@
-// include the express module
+// include all necessary modules
 const express = require('express');
-
-const app = express();
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config(); // loads all environment variables from .env
 const controller = require('./controllers/contacts');
-const routes = require('./routes/contacts');
-
+const contactRoutes = require('./routes/contacts');
 const { connectDB } = require('./db/connect');
 
-connectDB();
-
+const app = express();
 const port = process.env.PORT || 8080;
+
+// method is defined in db/connect.js
+connectDB();
 
 // add middleware that parses incoming json requests
 // into the request processing pipeline...can access
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // specify our url path for '/contacts' in the routes module
-app.use('/', routes);
+app.use('/', contactRoutes);
 
 // use express's listen method to create a port so the application
 // can be tested on a browser
