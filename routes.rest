@@ -1,4 +1,5 @@
 // LOCALHOST
+GET http://localhost:8080/
 GET http://localhost:8080/contacts
 GET http://localhost:8080/contacts/
 GET http://localhost:8080/contacts/65ac4a5d041801aac0012b4b
@@ -7,6 +8,7 @@ GET http://localhost:8080/contacts/65ac4a5d041801aac0012b49
 GET http://localhost:8080/contacts/65ac4a5d041801aac0012b4a
 
 // PRODUCTION Deploy
+GET https://cse341-01-test.onrender.com/
 GET https://cse341-01-test.onrender.com/contacts
 GET https://cse341-01-test.onrender.com/contacts/
 GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b4b

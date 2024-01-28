@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config(); // loads all environment variables from .env
-const controller = require('./controllers/contacts');
+
 const routes = require('./routes');
 const { connectDB } = require('./db/connect');
 

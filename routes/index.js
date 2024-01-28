@@ -1,9 +1,9 @@
 const express = require('express');
 const contactRoutes = require('./contacts');
+const indexController = require('../controllers/index');
 
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.send('GET request to homepage');
-});
+router.get('/', indexController.promptContactsRoute);
 
 router.use('/contacts', contactRoutes);
+module.exports = router;
