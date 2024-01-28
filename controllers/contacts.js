@@ -1,7 +1,7 @@
 const { ObjectId } = require('mongodb');
 const { connectDB } = require('../db/connect');
 
-const getAllDataFromDB = async (req, res, next) => {
+const getAllDataFromDB = async (req, res) => {
   const client = await connectDB();
 
   try {
@@ -18,7 +18,7 @@ const getAllDataFromDB = async (req, res, next) => {
   }
 };
 
-const getDataFromDB = async (req, res, next) => {
+const getDataFromDB = async (req, res) => {
   const client = await connectDB();
   const userId = new ObjectId(req.params.id);
 
