@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config(); // loads all environment variables from .env
 const controller = require('./controllers/contacts');
-const contactRoutes = require('./routes/contacts');
+const routes = require('./routes');
 const { connectDB } = require('./db/connect');
 
 const app = express();
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // specify our url path for '/contacts' in the routes module
-app.use('/', contactRoutes);
+app.use('/', routes);
 
 // use express's listen method to create a port so the application
 // can be tested on a browser
