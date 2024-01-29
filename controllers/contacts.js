@@ -15,18 +15,6 @@ const createContact = async (req, res) => {
   res.send(result);
 };
 
-const createContact1 = async (req, res) => {
-  const contact = new Contact({
-    firstName: 'Mary',
-    lastName: 'Kirkendall',
-    email: 'mk@gmail.com',
-    favoriteColor: 'blue',
-    birthday: '1995-09-27',
-  });
-  const result = await contact.save();
-  res.send(result);
-};
-
 const getAllData = async (req, res) => {
   try {
     const contacts = await Contact.find();
@@ -50,4 +38,4 @@ const getDataById = async (req, res) => {
 };
 
 // exports obj containing these methods
-module.exports = { getAllData, getDataById };
+module.exports = { getAllData, getDataById, createContact };
