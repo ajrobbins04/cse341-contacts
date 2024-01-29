@@ -5,7 +5,9 @@ const Contact = require('../models/contacts');
 
 const createContact = async (req, res) => {
   try {
+    // use Contact model to create a new contact
     const contact = new Contact({
+      // retrieve all necessary data from request body
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
@@ -13,7 +15,10 @@ const createContact = async (req, res) => {
       birthday: req.body.birthday,
     });
 
+    // save new contact to the db
     const result = await contact.save();
+
+    // return 201 status and the id of the new contact
     // eslint-disable-next-line no-underscore-dangle
     res.status(201).json({ id: result._id });
   } catch (error) {
@@ -23,8 +28,10 @@ const createContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
+  // retrieve id from request parameters
   const userId = new ObjectId(req.params.id);
   try {
+    // retrieve contact that will be updated by id
     const currContact = await Contact.findById(userId);
 
     // Update the existing contact with the new data
@@ -37,6 +44,7 @@ const updateContact = async (req, res) => {
     // Save the updated contact
     const result = await currContact.save();
     console.log(result);
+    // send 204 status when contact successfully updated
     res.status(204).send();
   } catch (error) {
     console.error('Error creating contact:', error);
@@ -45,10 +53,13 @@ const updateContact = async (req, res) => {
 };
 
 const deleteContact = async (req, res) => {
+  // retrieve id from request parameters
   const userId = new ObjectId(req.params.id);
   try {
+    // delete contact by the associated id
     const result = await Contact.findByIdAndDelete(userId);
     console.log(result);
+    // send 200 status when contact successfully deleted
     res.status(200).send();
   } catch (error) {
     console.error('Error creating contact:', error);
@@ -58,8 +69,10 @@ const deleteContact = async (req, res) => {
 
 const getAllData = async (req, res) => {
   try {
+    // find all contacts in the db
     const contacts = await Contact.find();
     console.log('Data from MongoDB:', contacts);
+    // respond with the list of contacts
     res.json(contacts);
   } catch (error) {
     console.error('Error retrieving data from MongoDB:', error.message);
@@ -67,9 +80,11 @@ const getAllData = async (req, res) => {
 };
 
 const getDataById = async (req, res) => {
+  // retrieve id from request parameters
   const userId = new ObjectId(req.params.id);
 
   try {
+    // find and retrieve a specific contact by id
     const contact = await Contact.findById(userId);
     console.log('Data from MongoDB:', contact);
     res.json(contact);
