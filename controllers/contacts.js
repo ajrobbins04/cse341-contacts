@@ -27,7 +27,7 @@ const createContact1 = async (req, res) => {
   res.send(result);
 };
 
-const getAllDataFromDB = async (req, res) => {
+const getAllData = async (req, res) => {
   try {
     const contacts = await Contact.find();
     console.log('Data from MongoDB:', contacts);
@@ -37,41 +37,17 @@ const getAllDataFromDB = async (req, res) => {
   }
 };
 
-const getAllDataFromDB2 = async (req, res) => {
-  const client = await connectDB();
-
-  try {
-    const db = client.db('02-personal');
-    const collection = db.collection('contacts');
-    const result = await collection.find().toArray();
-    console.log('Data from MongoDB:', result);
-    res.send(result);
-  } catch (error) {
-    console.error('Error retrieving data from MongoDB:', error.message);
-  } finally {
-    // Close the connection when done
-    await client.close();
-  }
-};
-
-const getDataFromDB = async (req, res) => {
-  const client = await connectDB();
+const getDataById = async (req, res) => {
   const userId = new ObjectId(req.params.id);
 
   try {
-    const db = client.db('02-personal');
-    const collection = db.collection('contacts');
-    const result = await collection.find({ _id: userId }).toArray();
-
-    console.log('Data from MongoDB:', result);
-    res.send(result);
+    const contact = await Contact.findById(userId);
+    console.log('Data from MongoDB:', contact);
+    res.json(contact);
   } catch (error) {
     console.error('Error retrieving data from MongoDB:', error.message);
-  } finally {
-    // Close the connection when done
-    await client.close();
   }
 };
 
 // exports obj containing these methods
-module.exports = { getAllDataFromDB, getDataFromDB, createContact1 };
+module.exports = { getAllData, getDataById };
