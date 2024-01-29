@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 // update contact  
-PUT http://localhost:8080/contacts/65b7cefa3a7c19ed638db90a HTTP/1.1
+PUT http://localhost:8080/contacts/65b7d5173a7c19ed638db910 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 
 // delete contact
-DELETE http://localhost:8080/contacts/65b7cefa3a7c19ed638db90a HTTP/1.1
+DELETE http://localhost:8080/contacts/65b7d5173a7c19ed638db910 HTTP/1.1
 Content-Type: application/json
 
 // PRODUCTION DEPLOY
@@ -51,6 +51,7 @@ GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a87f
 GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a880
 GET https://cse341-01-test.onrender.com/contacts/65ac4a5d041801aac0012b49 
 GET https://cse341-01-test.onrender.com/contacts/65b7d185d61830b4d8d11ae3
+
 // create contact
 POST https://cse341-01-test.onrender.com/contacts/ HTTP/1.1
 Content-Type: application/json

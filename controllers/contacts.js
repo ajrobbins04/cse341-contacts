@@ -49,7 +49,7 @@ const deleteContact = async (req, res) => {
   try {
     const result = await Contact.findByIdAndDelete(userId);
     console.log(result);
-    res.status(204).send();
+    res.status(200).send();
   } catch (error) {
     console.error('Error creating contact:', error);
     res.status(500).json({ error: 'Error occurred while deleting a contact.' });
