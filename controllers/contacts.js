@@ -18,7 +18,41 @@ const createContact = async (req, res) => {
     res.status(201).json({ id: result._id });
   } catch (error) {
     console.error('Error creating contact:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Error occurred while creating a contact.' });
+  }
+};
+
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  try {
+    const currContact = await Contact.findById(userId);
+
+    // Update the existing contact with the new data
+    currContact.firstName = req.body.firstName;
+    currContact.lastName = req.body.lastName;
+    currContact.email = req.body.email;
+    currContact.favoriteColor = req.body.favoriteColor;
+    currContact.birthday = req.body.birthday;
+
+    // Save the updated contact
+    const result = await currContact.save();
+    console.log(result);
+    res.status(204).send();
+  } catch (error) {
+    console.error('Error creating contact:', error);
+    res.status(500).json({ error: 'Error occurred while updating a contact.' });
+  }
+};
+
+const deleteContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  try {
+    const result = await Contact.findByIdAndDelete(userId);
+    console.log(result);
+    res.status(204).send();
+  } catch (error) {
+    console.error('Error creating contact:', error);
+    res.status(500).json({ error: 'Error occurred while deleting a contact.' });
   }
 };
 
@@ -45,4 +79,10 @@ const getDataById = async (req, res) => {
 };
 
 // exports obj containing these methods
-module.exports = { getAllData, getDataById, createContact };
+module.exports = {
+  getAllData,
+  getDataById,
+  createContact,
+  updateContact,
+  deleteContact,
+};
