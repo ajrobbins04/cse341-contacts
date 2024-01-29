@@ -5,9 +5,9 @@ POST http://localhost:8080/contacts/ HTTP/1.1
 Content-Type: application/json
 
 {
-  "firstName": "Mary",
-  "lastName": "Kirkendall",
-  "email": "mk@gmail.com",
-  "favoriteColor": "Blue",
-  "birthday": "09-27-1995"
+  "firstName": "Kylee",
+  "lastName": "Mecham",
+  "email": "KMecham@gmail.com",
+  "favoriteColor": "Black",
+  "birthday": "06-16-1995"
 }

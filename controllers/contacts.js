@@ -4,15 +4,22 @@ const { connectDB } = require('../db/connect');
 const Contact = require('../models/contacts');
 
 const createContact = async (req, res) => {
-  const contact = new Contact({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
-  });
-  const result = await contact.save();
-  res.send(result);
+  try {
+    const contact = new Contact({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      favoriteColor: req.body.favoriteColor,
+      birthday: req.body.birthday,
+    });
+
+    const result = await contact.save();
+    // eslint-disable-next-line no-underscore-dangle
+    res.status(201).json({ id: result._id });
+  } catch (error) {
+    console.error('Error creating contact:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 };
 
 const getAllData = async (req, res) => {
