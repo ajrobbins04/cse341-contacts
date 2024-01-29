@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 // define shape of documents w/in contacts collection
 const contactSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
   firstName: String,
   lastName: String,
   email: String,

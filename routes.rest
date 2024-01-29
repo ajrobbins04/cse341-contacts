@@ -1,11 +1,5 @@
 // LOCALHOST
-GET http://localhost:8080/
-GET http://localhost:8080/contacts
-GET http://localhost:8080/contacts/
-GET http://localhost:8080/contacts/65b70c57fe8c58889281a87f
-GET http://localhost:8080/contacts/65b70c57fe8c58889281a880
-GET http://localhost:8080/contacts/65b70c57fe8c58889281a881
-GET http://localhost:8080/contacts/65b70c57fe8c58889281a882
+
 
 POST http://localhost:8080/contacts/ HTTP/1.1
 Content-Type: application/json
@@ -17,12 +11,3 @@ Content-Type: application/json
   "favoriteColor": "Blue",
   "birthday": "09-27-1995"
 }
-
-// PRODUCTION Deploy
-GET https://cse341-01-test.onrender.com/
-GET https://cse341-01-test.onrender.com/contacts
-GET https://cse341-01-test.onrender.com/contacts/
-GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a87f
-GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a880
-GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a881
-GET https://cse341-01-test.onrender.com/contacts/65b70c57fe8c58889281a882
