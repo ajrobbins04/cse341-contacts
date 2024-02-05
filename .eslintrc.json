@@ -3,7 +3,7 @@
     "node": true,
     "es2021": true
   },
-  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -15,6 +15,12 @@
       {
         "singleQuote": true,
         "parser": "flow"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["swagger-autogen"]
       }
     ],
     "no-unused-vars": "warn",

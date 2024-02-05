@@ -1,32 +1,31 @@
 [
-    {
-        "firstName": "Courtney",
-        "lastName": "Roberts",
-        "email": "courtRoberts12@gmail.com",
-        "favoriteColor": "Purple",
-        "birthday": "06-10-1990"
-    },
-    {
-        "firstName": "Jerrick",
-        "lastName": "Robbins",
-        "email": "jlRobbins@gmail.com",
-        "favoriteColor": "Blue",
-        "birthday": "05-05-1989"
-    },
-    {
-        "firstName": "Lindsey",
-        "lastName": "Osborne",
-        "email": "l.osborne611@gmail.com",
-        "favoriteColor": "Pink",
-        "birthday": "05-30-1993"
-    },
-    {
-        "firstName": "Elizabeth",
-        "lastName": "Ririe",
-        "email": "ejRirie@gmail.com",
-        "favoriteColor": "Green",
-        "birthday": "03-22-1985"
-    }
-      
+  {
+      "firstName": "Courtney",
+      "lastName": "Roberts",
+      "email": "courtRoberts12@gmail.com",
+      "favoriteColor": "Purple",
+      "birthday": "06-10-1990"
+  },
+  {
+      "firstName": "Jerrick",
+      "lastName": "Robbins",
+      "email": "jlRobbins@gmail.com",
+      "favoriteColor": "Blue",
+      "birthday": "05-05-1989"
+  },
+  {
+      "firstName": "Lindsey",
+      "lastName": "Osborne",
+      "email": "l.osborne611@gmail.com",
+      "favoriteColor": "Pink",
+      "birthday": "05-30-1993"
+  },
+  {
+      "firstName": "Elizabeth",
+      "lastName": "Ririe",
+      "email": "ejRirie@gmail.com",
+      "favoriteColor": "Green",
+      "birthday": "03-22-1985"
+  }
+    
 ]
-  

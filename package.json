@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "git-update": "git add . && git commit -m \"update\" && git push"
+    "git-update": "git add . && git commit -m \"update\" && git push",
+    "swagger": "node ./swagger.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,8 @@
     "dotenv": "^16.3.2",
     "express": "^4.18.2",
     "mongodb": "^6.3.0",
-    "mongoose": "^8.1.1"
+    "mongoose": "^8.1.1",
+    "swagger-ui-express": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
@@ -32,6 +34,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^3.0.2",
-    "prettier": "^3.2.4"
+    "prettier": "^3.2.4",
+    "swagger-autogen": "^2.23.7"
   }
 }

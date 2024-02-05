@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config(); // loads all environment variables from .env
 
+const swaggerUi = require('swagger-ui-express'); // apiDocument user interface
+const swaggerDocument = require('./swagger.json'); // apiDocument (must come after interface)
+
 const routes = require('./routes');
 const { connectDB } = require('./db/connect');
 
@@ -12,23 +15,22 @@ const port = process.env.PORT || 8080;
 // method is defined in db/connect.js
 connectDB();
 
-// add middleware that parses incoming json requests
-// into the request processing pipeline...can access
-// this data from req.body
+// parses incoming json requests to
+// access this data from req.body
 app.use(bodyParser.json());
 
-// add middleware containing a CORS header that allows
-// requests from any domain...use applies to all routes
+// allows requests from any domain for all routes hereafter
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
 });
 
-// specify our url path for '/contacts' in the routes module
-app.use('/', routes);
+// specify url paths for apiDocumentation and contacts (inside routes)
+app
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use('/', routes);
 
-// use express's listen method to create a port so the application
-// can be tested on a browser
+// create a port so the application can be tested on a browser
 app.listen(port, () => {
   console.log(`Web Server is listening at port ${port}`);
 });
