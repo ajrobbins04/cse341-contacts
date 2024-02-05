@@ -1,5 +1,6 @@
 // include all necessary modules
 const express = require('express');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config(); // loads all environment variables from .env
@@ -23,7 +24,7 @@ app.use(bodyParser.json());
 // Use cors middleware to handle CORS headers
 const corsOptions = {
   origin: 'https://cse341-contacts-frontend.netlify.app',
-  methods: 'GET,PUT,POST,DELETE,OPTIONS',
+  methods: 'GET,PUT,POST,DELETE',
   optionsSuccessStatus: 204,
 };
 
