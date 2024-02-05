@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // Use cors middleware to handle CORS headers
 const corsOptions = {
   origin: 'https://cse341-contacts-frontend.netlify.app',
-  methods: 'GET,PUT,POST,DELETE',
+  methods: 'GET,PUT,POST,DELETE,OPTIONS',
   optionsSuccessStatus: 204,
 };
 
