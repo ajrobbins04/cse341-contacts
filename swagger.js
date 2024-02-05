@@ -6,8 +6,8 @@ const doc = {
     title: 'Contacts API',
     description: 'API of Known Contacts.',
   },
-  host: 'localhost:8080',
-  schemes: ['http'], // the default value
+  host: 'cse341-01-test.onrender.com',
+  schemes: ['https'],
 };
 
 // where the openAPI doc is saved
