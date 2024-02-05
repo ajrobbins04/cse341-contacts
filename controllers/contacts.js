@@ -34,6 +34,11 @@ const updateContact = async (req, res) => {
     // retrieve contact that will be updated by id
     const currContact = await Contact.findById(userId);
 
+    if (!currContact) {
+      // the contact with the given ID is not found
+      res.status(404).json({ error: 'Contact not found.' });
+    }
+
     // Update the existing contact with the new data
     currContact.firstName = req.body.firstName;
     currContact.lastName = req.body.lastName;
