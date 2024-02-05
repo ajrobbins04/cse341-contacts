@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 const corsOptions = {
   origin: 'https://cse341-contacts-frontend.netlify.app',
   methods: 'GET,PUT,POST,DELETE',
+  credentials: true,
   optionsSuccessStatus: 204,
 };
 
