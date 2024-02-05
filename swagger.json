@@ -5,10 +5,10 @@
     "description": "API of Known Contacts.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-01-test.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
