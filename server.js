@@ -1,5 +1,6 @@
 // include all necessary modules
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config(); // loads all environment variables from .env
 
@@ -19,11 +20,14 @@ connectDB();
 // access this data from req.body
 app.use(bodyParser.json());
 
-// allows requests from any domain for all routes hereafter
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-});
+// Use cors middleware to handle CORS headers
+const corsOptions = {
+  origin: 'https://cse341-contacts-frontend.netlify.app',
+  methods: 'GET,PUT,POST,DELETE',
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 // specify url paths for apiDocumentation and contacts (inside routes)
 app
