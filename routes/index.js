@@ -5,8 +5,8 @@ const swaggerRoutes = require('./swagger');
 
 const router = express.Router();
 
+router.use('/', swaggerRoutes); // mount to be included in apiDocs
 router.get('/', indexController.promptContactsRoute);
 router.use('/contacts', contactRoutes);
-router.use('/', swaggerRoutes); // mount to be included in apiDocs
 
 module.exports = router;
